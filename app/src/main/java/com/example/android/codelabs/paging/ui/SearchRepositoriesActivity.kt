@@ -51,6 +51,7 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         binding.list.addItemDecoration(decoration)
 
         // bind the state
+        // TODO 따로 클래스 구분하기
         binding.bindState(
             uiState = viewModel.state,
             uiActions = viewModel.accept

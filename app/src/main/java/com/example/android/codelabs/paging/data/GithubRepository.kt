@@ -26,8 +26,8 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import retrofit2.HttpException
 import java.io.IOException
 
-// GitHub page API is 1 based: https://developer.github.com/v3/#pagination
-private const val GITHUB_STARTING_PAGE_INDEX = 1
+//// GitHub page API is 1 based: https://developer.github.com/v3/#pagination
+//private const val GITHUB_STARTING_PAGE_INDEX = 1
 
 /**
  * Repository class that works with local and remote data sources.
