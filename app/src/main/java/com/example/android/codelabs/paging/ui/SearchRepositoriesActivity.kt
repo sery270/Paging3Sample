@@ -21,7 +21,8 @@ import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -52,7 +53,8 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         // TODO 따로 클래스 구분하기
         binding.bindState(
             uiState = viewModel.state,
-            uiActions = viewModel.accept
+            uiActions = viewModel.accept,
+            pagingData = viewModel.pagingDataFlow
         )
     }
 
@@ -75,7 +77,8 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         bindList(
             repoAdapter = repoAdapter,
             uiState = uiState,
-            onScrollChanged = uiActions
+            onScrollChanged = uiActions,
+            pagingData = pagingData
         )
     }
 
@@ -166,26 +169,4 @@ class SearchRepositoriesActivity : AppCompatActivity() {
         emptyList.isVisible = show
         list.isVisible = !show
     }
-
-//    private fun ActivitySearchRepositoriesBinding.setupScrollListener(
-//        onScrollChanged: (UiAction.Scroll) -> Unit
-//    ) {
-//        val layoutManager = list.layoutManager as LinearLayoutManager
-//        list.addOnScrollListener(object : OnScrollListener() {
-//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                super.onScrolled(recyclerView, dx, dy)
-//                val totalItemCount = layoutManager.itemCount
-//                val visibleItemCount = layoutManager.childCount
-//                val lastVisibleItem = layoutManager.findLastVisibleItemPosition()
-//
-//                onScrollChanged(
-//                    UiAction.Scroll(
-//                        visibleItemCount = visibleItemCount,
-//                        lastVisibleItemPosition = lastVisibleItem,
-//                        totalItemCount = totalItemCount
-//                    )
-//                )
-//            }
-//        })
-//    }
 }
