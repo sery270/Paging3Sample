@@ -19,6 +19,8 @@ package com.example.android.codelabs.paging.model
 import java.lang.Exception
 
 // TODO deprecated 제거하기 !
+// Paging 3을 사용하면 라이브러리가 LoadResult로 성공 및 오류 사례를 모두 모델링하므로 RepoSearchResult가 더 이상 필요하지 않습니다.
+// RepoSearchResult는 다음 단계에서 대체되므로 삭제해도 됩니다.
 
 /**
  * RepoSearchResult from a search, which contains List<Repo> holding query data,
