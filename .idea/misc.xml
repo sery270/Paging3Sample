@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_search_repositories.xml" value="0.409375" />
+        <entry key="app/src/main/res/layout/repo_view_item.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/repos_load_state_footer_view_item.xml" value="0.3648148148148148" />
       </map>
     </option>
   </component>
